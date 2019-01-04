@@ -1,5 +1,12 @@
 const turns = ['']
 
+if ((turns.length + 1) % 2 === 0) {
+  console.log(turns)
+  $('#turn').html('<p>Player X turn</p>')
+} else if ((turns.length + 1) % 2 === 1) {
+  $('#turn').html('<p>Player O turn</p>')
+}
+
 const onBoxOneClick = (event) => {
   console.log('1 clicked')
   turns.push('one')
@@ -7,6 +14,12 @@ const onBoxOneClick = (event) => {
     $('<p>X</p>').appendTo('#one')
   } else {
     $('<p>O</p>').appendTo('#one')
+  }
+  if ((turns.length + 1) % 2 === 0) {
+    console.log(turns)
+    $('#turn').html('<p>Player X turn</p>')
+  } else if ((turns.length + 1) % 2 === 1) {
+    $('#turn').html('<p>Player O turn</p>')
   }
 }
 
@@ -18,6 +31,12 @@ const onBoxTwoClick = (event) => {
   } else {
     $('<p>O</p>').appendTo('#two')
   }
+  if ((turns.length + 1) % 2 === 0) {
+    console.log(turns)
+    $('#turn').html('<p>Player X turn</p>')
+  } else if ((turns.length + 1) % 2 === 1) {
+    $('#turn').html('<p>Player O turn</p>')
+  }
 }
 const onBoxThreeClick = (event) => {
   console.log('3 clicked')
@@ -26,6 +45,12 @@ const onBoxThreeClick = (event) => {
     $('<p>X</p>').appendTo('#three')
   } else {
     $('<p>O</p>').appendTo('#three')
+  }
+  if ((turns.length + 1) % 2 === 0) {
+    console.log(turns)
+    $('#turn').html('<p>Player X turn</p>')
+  } else if ((turns.length + 1) % 2 === 1) {
+    $('#turn').html('<p>Player O turn</p>')
   }
 }
 const onBoxFourClick = (event) => {
@@ -36,6 +61,12 @@ const onBoxFourClick = (event) => {
   } else {
     $('<p>O</p>').appendTo('#four')
   }
+  if ((turns.length + 1) % 2 === 0) {
+    console.log(turns)
+    $('#turn').html('<p>Player X turn</p>')
+  } else if ((turns.length + 1) % 2 === 1) {
+    $('#turn').html('<p>Player O turn</p>')
+  }
 }
 const onBoxFiveClick = (event) => {
   console.log('5 clicked')
@@ -44,6 +75,12 @@ const onBoxFiveClick = (event) => {
     $('<p>X</p>').appendTo('#five')
   } else {
     $('<p>O</p>').appendTo('#five')
+  }
+  if ((turns.length + 1) % 2 === 0) {
+    console.log(turns)
+    $('#turn').html('<p>Player X turn</p>')
+  } else if ((turns.length + 1) % 2 === 1) {
+    $('#turn').html('<p>Player O turn</p>')
   }
 }
 const onBoxSixClick = (event) => {
@@ -54,6 +91,12 @@ const onBoxSixClick = (event) => {
   } else {
     $('<p>O</p>').appendTo('#six')
   }
+  if ((turns.length + 1) % 2 === 0) {
+    console.log(turns)
+    $('#turn').html('<p>Player X turn</p>')
+  } else if ((turns.length + 1) % 2 === 1) {
+    $('#turn').html('<p>Player O turn</p>')
+  }
 }
 const onBoxSevenClick = (event) => {
   console.log('7 clicked')
@@ -62,6 +105,12 @@ const onBoxSevenClick = (event) => {
     $('<p>X</p>').appendTo('#seven')
   } else {
     $('<p>O</p>').appendTo('#seven')
+  }
+  if ((turns.length + 1) % 2 === 0) {
+    console.log(turns)
+    $('#turn').html('<p>Player X turn</p>')
+  } else if ((turns.length + 1) % 2 === 1) {
+    $('#turn').html('<p>Player O turn</p>')
   }
 }
 const onBoxEightClick = (event) => {
@@ -72,6 +121,12 @@ const onBoxEightClick = (event) => {
   } else {
     $('<p>O</p>').appendTo('#eight')
   }
+  if ((turns.length + 1) % 2 === 0) {
+    console.log(turns)
+    $('#turn').html('<p>Player X turn</p>')
+  } else if ((turns.length + 1) % 2 === 1) {
+    $('#turn').html('<p>Player O turn</p>')
+  }
 }
 const onBoxNineClick = (event) => {
   console.log('9 clicked')
@@ -80,6 +135,12 @@ const onBoxNineClick = (event) => {
     $('<p>X</p>').appendTo('#nine')
   } else {
     $('<p>O</p>').appendTo('#nine')
+  }
+  if ((turns.length + 1) % 2 === 0) {
+    console.log(turns)
+    $('#turn').html('<p>Player X turn</p>')
+  } else if ((turns.length + 1) % 2 === 1) {
+    $('#turn').html('<p>Player O turn</p>')
   }
 }
 
