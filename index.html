@@ -13,41 +13,90 @@
     </head>
     <body>
       <h1>Tic-Tac-Toe</h1>
+<nav>
+  <a href="#">Show Games</a>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Show Game
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Change Password
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="#">sign-out</a>
+</nav>
       <h6 id='turn'></h6>
       <div class='container'>
-              <div class= 'row'>
-                <div id="box-1" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
-                  <div id='one'></div>
-                </div>
-                <div id="box-2" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
-                  <div id='two'></div>
-                </div>
-                <div id="box-3" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
-                  <div id='three'></div>
-                </div>
-              </div>
-              <div class= 'row'>
-                <div id="box-4" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
-                  <div id='four'></div>
-                </div>
-                <div id="box-5" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
-                  <div id='five'></div>
-                </div>
-                <div id="box-6" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
-                  <div id='six'></div>
-                </div>
-              </div>
-              <div class= 'row'>
-                <div id="box-7" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
-                  <div id='seven'></div>
-                </div>
-                <div id="box-8" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
-                  <div id='eight'></div>
-                </div>
-                <div id="box-9" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
-                  <div id='nine'></div>
-                </div>
-              </div>
+        <div class= 'row'>
+          <div id="box-1" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+            <div id='one'></div>
+          </div>
+          <div id="box-2" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+            <div id='two'></div>
+          </div>
+          <div id="box-3" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+            <div id='three'></div>
+          </div>
+        </div>
+        <div class= 'row'>
+          <div id="box-4" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+            <div id='four'></div>
+          </div>
+          <div id="box-5" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+            <div id='five'></div>
+          </div>
+          <div id="box-6" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+            <div id='six'></div>
+          </div>
+        </div>
+        <div class= 'row'>
+          <div id="box-7" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+            <div id='seven'></div>
+          </div>
+          <div id="box-8" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+            <div id='eight'></div>
+          </div>
+          <div id="box-9" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+            <div id='nine'></div>
+          </div>
+        </div>
       </div>
+      <div id = 'winText'></div>
     </body>
 </html>
