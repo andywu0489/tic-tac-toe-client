@@ -17,3 +17,10 @@ $(() => {
   $('#box-8').one('click', events.onBoxEightClick)
   $('#box-9').one('click', events.onBoxNineClick)
 })
+
+$(() => {
+  $('#sign-up').on('submit', events.onSignUp)
+  $('#sign-in').on('submit', events.onSignIn)
+  $('#change-password').on('submit', events.onChangePassword)
+  $('#sign-out').on('submit', events.onSignOut)
+})
