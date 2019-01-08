@@ -15,29 +15,33 @@
       <h1>Tic-Tac-Toe</h1>
       <h3 id='user-message'></h3>
 <nav>
+  <div id="logged-out">
   <h3>Sign Up</h3>
   <form id='sign-up'>
-    <input type="text" name="credentials[email]" placeholder="Email goes here">
-    <input type="text" name="credentials[password]" placeholder="Password goes here">
-    <input type="text" name="credentials[password_confirmation]" placeholder="Confirm password goes here">
+    <input type="text" name="credentials[email]" placeholder="Email">
+    <input type="text" name="credentials[password]" placeholder="Password">
+    <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password">
     <button>Submit</button>
   </form>
   <h3>Sign In</h3>
   <form id='sign-in'>
-    <input type="text" name="credentials[email]" placeholder="Email goes here">
-    <input type="text" name="credentials[password]" placeholder="Password goes here">
+    <input type="text" name="credentials[email]" placeholder="Email">
+    <input type="text" name="credentials[password]" placeholder="Password">
   <button>Sign In</button>
   </form>
+</div>
+  <div id="logged-in">
   <h3>Change Password</h3>
   <form id='change-password'>
-    <input type="text" name="passwords[old]" placeholder="Old password">
-    <input type="text" name="passwords[new]" placeholder="New password ">
+    <input type="text" name="passwords[old]" placeholder="Old Password">
+    <input type="text" name="passwords[new]" placeholder="New Password ">
     <button>Submit</button>
   </form>
   <h3>Sign Out</h3>
   <form id='sign-out'>
     <button type="submit">Sign Out</button>
   </form>
+</div>
     <a href="#">Show Games</a>
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Show Game
