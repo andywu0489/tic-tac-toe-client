@@ -3,7 +3,7 @@ const store = require('../store')
 
 const onSignUpSuccess = (responseData) => {
   console.log(responseData)
-  $('#user-message').text('Successfully signed up')
+  $('#user-message').text('Successfully signed up!')
 }
 
 const onSignUpFailure = () => {
@@ -13,8 +13,8 @@ const onSignUpFailure = () => {
 const onSignInSuccess = (responseData) => {
   console.log('responseData is:', responseData)
   $('#user-message').text('Successfully signed in')
-  $('#logged-in').show()
-  $('#logged-out').hide()
+  $('.logged-in').show()
+  $('.logged-out').hide()
   store.user = responseData.user
   console.log('Store is:', store)
 }
@@ -34,8 +34,11 @@ const onChangePasswordFailure = () => {
 
 const onSignOutSuccess = () => {
   $('#user-message').text('Successfully signed out')
-  $('#logged-in').hide()
-  $('#logged-out').show()
+  $('.logged-in').hide()
+  $('.logged-out').show()
+  $('.container').hide()
+  $('.turn').hide()
+  $('.win-text').hide()
   console.log('Store is:', store)
   store.user = null
 }

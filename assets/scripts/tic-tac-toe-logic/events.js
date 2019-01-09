@@ -1,10 +1,11 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
+// const gameEvents = require('../games/events')
 
 const onSignUp = (event) => {
   event.preventDefault()
-  console.log('it works')
   const formData = getFormFields(event.target)
 
   api.signUp(formData)
@@ -16,7 +17,6 @@ const onSignUp = (event) => {
 
 const onSignIn = (event) => {
   event.preventDefault()
-  console.log('it works')
   const formData = getFormFields(event.target)
 
   api.signIn(formData)
@@ -28,7 +28,6 @@ const onSignIn = (event) => {
 
 const onChangePassword = (event) => {
   event.preventDefault()
-  console.log('it works')
   const formData = getFormFields(event.target)
 
   api.changePassword(formData)
@@ -40,7 +39,6 @@ const onChangePassword = (event) => {
 
 const onSignOut = (event) => {
   event.preventDefault()
-  console.log('it works')
 
   api.signOut()
     .then(ui.onSignOutSuccess)
@@ -50,7 +48,10 @@ const onSignOut = (event) => {
 }
 
 const turns = []
-const board = ['', '', '', '', '', '', '', '', '']
+const board = store.board
+
+const resetBoard = () => {
+}
 
 const disableClicks = () => {
   $('#box-1').off('click')
@@ -65,7 +66,7 @@ const disableClicks = () => {
 }
 
 const onInvalidBoxClick = (event) => {
-  $('#winText').html('<p>Invalid Move!</p>')
+  $('.win-text').html('<p>Invalid Move!</p>')
 }
 
 const invalidMessage = () => {
@@ -82,83 +83,99 @@ const invalidMessage = () => {
 
 const win = () => {
   if (board[0] === 'x' && board[1] === 'x' && board[2] === 'x') {
-    $('#winText').html('<p>Player X Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player X Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[3] === 'x' && board[4] === 'x' && board[5] === 'x') {
-    $('#winText').html('<p>Player X Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player X Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[6] === 'x' && board[7] === 'x' && board[8] === 'x') {
-    $('#winText').html('<p>Player X Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player X Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[0] === 'x' && board[3] === 'x' && board[6] === 'x') {
-    $('#winText').html('<p>Player X Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player X Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[1] === 'x' && board[4] === 'x' && board[7] === 'x') {
-    $('#winText').html('<p>Player X Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player X Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[2] === 'x' && board[5] === 'x' && board[8] === 'x') {
-    $('#winText').html('<p>Player X Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player X Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[0] === 'x' && board[4] === 'x' && board[8] === 'x') {
-    $('#winText').html('<p>Player X Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player X Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[2] === 'x' && board[4] === 'x' && board[6] === 'x') {
-    $('#winText').html('<p>Player X Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player X Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[0] === 'o' && board[1] === 'o' && board[2] === 'o') {
-    $('#winText').html('<p>Player O Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player O Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[3] === 'o' && board[4] === 'o' && board[5] === 'o') {
-    $('#winText').html('<p>Player O Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player O Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[6] === 'o' && board[7] === 'o' && board[8] === 'o') {
-    $('#winText').html('<p>Player O Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player O Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[0] === 'o' && board[3] === 'o' && board[6] === 'o') {
-    $('#winText').html('<p>Player O Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player O Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[1] === 'o' && board[4] === 'o' && board[7] === 'o') {
-    $('#winText').html('<p>Player O Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player O Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[2] === 'o' && board[5] === 'o' && board[8] === 'o') {
-    $('#winText').html('<p>Player O Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player O Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[0] === 'o' && board[4] === 'o' && board[8] === 'o') {
-    $('#winText').html('<p>Player O Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player O Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   } else if (board[2] === 'o' && board[4] === 'o' && board[6] === 'o') {
-    $('#winText').html('<p>Player O Wins!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Player O Wins!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
     disableClicks()
     invalidMessage()
   }
@@ -166,15 +183,23 @@ const win = () => {
 
 const tie = () => {
   if (turns.length === 9) {
-    $('#winText').html('<p>Draw!</p>')
-    $('#turn').html('<p>Game Over</p>')
+    $('.win-text').html('<p>Draw!</p>')
+    $('.turn').html('<p>Game Over</p>')
+    $('.newGame').show()
   }
 }
 
+const onNewGame = () => {
+  $('.container').show()
+  $('.turn').show()
+  $('.win-text').show()
+  // $('.container').gameEvents.onCreateGame()
+}
+
 if ((turns.length + 1) % 2 === 0) {
-  $('#turn').html('<p>Player O turn</p>')
+  $('.turn').html('<p>Player O turn</p>')
 } else if ((turns.length + 1) % 2 === 1) {
-  $('#turn').html('<p>Player X turn</p>')
+  $('.turn').html('<p>Player X turn</p>')
 }
 
 const onBoxOneClick = (event) => {
@@ -185,10 +210,10 @@ const onBoxOneClick = (event) => {
     $('<p>O</p>').appendTo('#one')
   }
   if ((turns.length + 1) % 2 === 1) {
-    $('#turn').html('<p>Player X turn</p>')
+    $('.turn').html('<p>Player X turn</p>')
     board[0] = 'o'
   } else if ((turns.length + 1) % 2 === 0) {
-    $('#turn').html('<p>Player O turn</p>')
+    $('.turn').html('<p>Player O turn</p>')
     board[0] = 'x'
   }
   tie()
@@ -203,10 +228,10 @@ const onBoxTwoClick = (event) => {
     $('<p>O</p>').appendTo('#two')
   }
   if ((turns.length + 1) % 2 === 1) {
-    $('#turn').html('<p>Player X turn</p>')
+    $('.turn').html('<p>Player X turn</p>')
     board[1] = 'o'
   } else if ((turns.length + 1) % 2 === 0) {
-    $('#turn').html('<p>Player O turn</p>')
+    $('.turn').html('<p>Player O turn</p>')
     board[1] = 'x'
   }
   tie()
@@ -220,10 +245,10 @@ const onBoxThreeClick = (event) => {
     $('<p>O</p>').appendTo('#three')
   }
   if ((turns.length + 1) % 2 === 1) {
-    $('#turn').html('<p>Player X turn</p>')
+    $('.turn').html('<p>Player X turn</p>')
     board[2] = 'o'
   } else if ((turns.length + 1) % 2 === 0) {
-    $('#turn').html('<p>Player O turn</p>')
+    $('.turn').html('<p>Player O turn</p>')
     board[2] = 'x'
   }
   tie()
@@ -237,10 +262,10 @@ const onBoxFourClick = (event) => {
     $('<p>O</p>').appendTo('#four')
   }
   if ((turns.length + 1) % 2 === 1) {
-    $('#turn').html('<p>Player X turn</p>')
+    $('.turn').html('<p>Player X turn</p>')
     board[3] = 'o'
   } else if ((turns.length + 1) % 2 === 0) {
-    $('#turn').html('<p>Player O turn</p>')
+    $('.turn').html('<p>Player O turn</p>')
     board[3] = 'x'
   }
   tie()
@@ -254,10 +279,10 @@ const onBoxFiveClick = (event) => {
     $('<p>O</p>').appendTo('#five')
   }
   if ((turns.length + 1) % 2 === 1) {
-    $('#turn').html('<p>Player X turn</p>')
+    $('.turn').html('<p>Player X turn</p>')
     board[4] = 'o'
   } else if ((turns.length + 1) % 2 === 0) {
-    $('#turn').html('<p>Player O turn</p>')
+    $('.turn').html('<p>Player O turn</p>')
     board[4] = 'x'
   }
   tie()
@@ -271,10 +296,10 @@ const onBoxSixClick = (event) => {
     $('<p>O</p>').appendTo('#six')
   }
   if ((turns.length + 1) % 2 === 1) {
-    $('#turn').html('<p>Player X turn</p>')
+    $('.turn').html('<p>Player X turn</p>')
     board[5] = 'o'
   } else if ((turns.length + 1) % 2 === 0) {
-    $('#turn').html('<p>Player O turn</p>')
+    $('.turn').html('<p>Player O turn</p>')
     board[5] = 'x'
   }
   tie()
@@ -288,10 +313,10 @@ const onBoxSevenClick = (event) => {
     $('<p>O</p>').appendTo('#seven')
   }
   if ((turns.length + 1) % 2 === 1) {
-    $('#turn').html('<p>Player X turn</p>')
+    $('.turn').html('<p>Player X turn</p>')
     board[6] = 'o'
   } else if ((turns.length + 1) % 2 === 0) {
-    $('#turn').html('<p>Player O turn</p>')
+    $('.turn').html('<p>Player O turn</p>')
     board[6] = 'x'
   }
   tie()
@@ -305,10 +330,10 @@ const onBoxEightClick = (event) => {
     $('<p>O</p>').appendTo('#eight')
   }
   if ((turns.length + 1) % 2 === 1) {
-    $('#turn').html('<p>Player X turn</p>')
+    $('.turn').html('<p>Player X turn</p>')
     board[7] = 'o'
   } else if ((turns.length + 1) % 2 === 0) {
-    $('#turn').html('<p>Player O turn</p>')
+    $('.turn').html('<p>Player O turn</p>')
     board[7] = 'x'
   }
   tie()
@@ -322,15 +347,16 @@ const onBoxNineClick = (event) => {
     $('<p>O</p>').appendTo('#nine')
   }
   if ((turns.length + 1) % 2 === 1) {
-    $('#turn').html('<p>Player X turn</p>')
+    $('.turn').html('<p>Player X turn</p>')
     board[8] = 'o'
   } else if ((turns.length + 1) % 2 === 0) {
-    $('#turn').html('<p>Player O turn</p>')
+    $('.turn').html('<p>Player O turn</p>')
     board[8] = 'x'
   }
   tie()
   win()
 }
+
 
 module.exports = {
   onBoxOneClick,
@@ -345,5 +371,8 @@ module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  board,
+  onNewGame,
+  resetBoard
 }
