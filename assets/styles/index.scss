@@ -1,1 +1,41 @@
 @import '~bootstrap/scss/bootstrap';
+
+$background-color: #919ade;
+$font-color: #dfdfdf;
+$white: #fff;
+$grey: rgb(128, 128, 128);
+$teal: rgb(0, 156, 161);
+$black: #000;
+
+body {
+  background-color: $white;
+}
+
+.box {
+  align-items: center;
+  border: 1px solid $black;
+  color: $black;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#turn {
+  text-align: center;
+}
+
+.nav {
+  align-self: center;
+}
+
+#winText {
+  text-align: center;
+}
+
+#logged-in {
+  display: none;
+}
