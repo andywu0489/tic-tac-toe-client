@@ -2,6 +2,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 // const logicevent = require('../tic-tac-toe-logic/events')
 
 const onCreateGame = (event) => {
@@ -27,23 +28,24 @@ const onShowGame = (event) => {
   api.showGame(formData)
     .then(ui.onShowGameSuccess)
     .catch(ui.onShowGameFailure)
+  $('form').trigger('reset')
 }
 
-// const onUpdateGame = (box, playerMove, over) => {
-// const data =
-// {
-//   'game': {
-//     'cell': {
-//       'index': ,
-//       'value': asd
-//     },
-//     'over': asd
-//   }
-// }
-//   api.updateGame()
-//     .then(ui.onUpdateGameSuccess)
-//     .catch(ui.onUpdateGameFailure)
-// }
+const onUpdateGame = (index, value) => {
+  const data =
+{
+  'game': {
+    'cell': {
+      'index': index,
+      'value': value
+    },
+    'over': store.game.over
+  }
+}
+  api.updateGame(data)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
+}
 // const onUpdateGame = (event) => {
 //   event.preventDefault()
 //   const id = event.target.id
@@ -88,9 +90,9 @@ const addHandlers = () => {
   $('#create-game').on('submit', onCreateGame)
   $('#get-games').on('submit', onGetGames)
   $('#show-game').on('submit', onShowGame)
-//  $('.container').on('click', onUpdateGame)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onUpdateGame
 }

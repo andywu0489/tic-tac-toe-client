@@ -1,5 +1,5 @@
 'use strict'
-const ticTacToeEvents = require('../tic-tac-toe-logic/events')
+const store = require('../store')
 
 const onCreateGameSuccess = (responseData) => {
   $('#user-message').text('Successfully Started Game')
@@ -7,7 +7,7 @@ const onCreateGameSuccess = (responseData) => {
   $('.container').show()
   $('.turn').show()
   $('.win-text').show()
-  ticTacToeEvents.resetBoard()
+  store.game = responseData.game
 }
 
 const onCreateGameFailure = (error) => {
@@ -50,7 +50,6 @@ const onShowGameSuccess = (responseData) => {
     <p>Game Over?: ${responseData.game.over}</p>
     <p>Player X's ID: ${responseData.game.player_x.id}</p>
     <p>Player X's Email: ${responseData.game.player_x.email}</p>
-    <p>Total Games Played: ${responseData.Array.length}</p>
     <br>
   `)
 
@@ -65,6 +64,7 @@ const onShowGameFailure = (error) => {
 const onUpdateGameSuccess = (responseData) => {
   $('#user-message').text('Successfully updated game')
   console.log('responseData is:', responseData)
+  store.game = responseData.game
 }
 
 const onUpdateGameFailure = (error) => {
