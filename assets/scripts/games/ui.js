@@ -7,6 +7,27 @@ const onCreateGameSuccess = (responseData) => {
   $('.container').show()
   $('.turn').show()
   $('.win-text').show()
+  $('#one').html('<p></p>')
+  $('#two').html('<p></p>')
+  $('#three').html('<p></p>')
+  $('#four').html('<p></p>')
+  $('#five').html('<p></p>')
+  $('#six').html('<p></p>')
+  $('#seven').html('<p></p>')
+  $('#eight').html('<p></p>')
+  $('#nine').html('<p></p>')
+  $('.win-text').html('<p></p>')
+  $('.turn').html('<p>Player X turn</p>')
+  // $('#box-1').on('click')
+  // $('#box-2').on('click')
+  // $('#box-3').on('click')
+  // $('#box-4').on('click')
+  // $('#box-5').on('click')
+  // $('#box-6').on('click')
+  // $('#box-7').on('click')
+  // $('#box-8').on('click')
+  // $('#box-9').on('click')
+
   store.game = responseData.game
 }
 
