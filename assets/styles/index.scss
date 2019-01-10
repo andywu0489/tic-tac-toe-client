@@ -13,11 +13,13 @@ body {
 
 .box {
   align-items: center;
-  border: 3px solid $black;
-  color: $black;
+  border: 3px solid $teal;
+  color: $teal;
   display: flex;
   height: 150px;
   justify-content: center;
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 h1 {

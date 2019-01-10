@@ -282,7 +282,7 @@ const onNewGame = () => {
   const disableClicks = () => {
     $('#box-1').off('click')
     $('#box-2').off('click')
-    $('#box-2').off('click')
+    $('#box-3').off('click')
     $('#box-4').off('click')
     $('#box-5').off('click')
     $('#box-6').off('click')
