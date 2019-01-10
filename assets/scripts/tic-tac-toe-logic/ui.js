@@ -2,7 +2,6 @@
 const store = require('../store')
 
 const onSignUpSuccess = (responseData) => {
-  console.log(responseData)
   $('#user-message').text('Successfully signed up!')
 }
 
@@ -11,12 +10,11 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = (responseData) => {
-  console.log('responseData is:', responseData)
   $('#user-message').text('Successfully signed in')
   $('.logged-in').show()
   $('.logged-out').hide()
+  $('#content').show()
   store.user = responseData.user
-  console.log('Store is:', store)
 }
 
 const onSignInFailure = () => {
@@ -25,11 +23,12 @@ const onSignInFailure = () => {
 
 const onChangePasswordSuccess = () => {
   $('#user-message').text('Successfully changed password')
-  console.log('Store is:', store)
+  $('#content').html('<p></p>')
 }
 
 const onChangePasswordFailure = () => {
   $('#user-message').text('Error on change password')
+  $('#content').html('<p></p>')
 }
 
 const onSignOutSuccess = () => {
@@ -39,7 +38,8 @@ const onSignOutSuccess = () => {
   $('.container').hide()
   $('.turn').hide()
   $('.win-text').hide()
-  console.log('Store is:', store)
+  $('#content').hide()
+  $('#content').html('<p></p>')
   store.user = null
 }
 
