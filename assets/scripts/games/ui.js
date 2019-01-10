@@ -12,8 +12,7 @@ const onCreateGameFailure = () => {
 }
 
 const onGetGamesSuccess = (responseData) => {
-  $('#user-message').text('Successfully got games')
-
+  // $('#user-message').text('Successfully got games')
   $('#content').html('')
 
   responseData.games.forEach(games => {
@@ -27,6 +26,11 @@ const onGetGamesSuccess = (responseData) => {
     `)
     $('#content').append(gamesHTML)
   })
+  if ($('#content').is(':empty')) {
+    $('#user-message').text('No Games Played Yet')
+  } else {
+    $('#user-message').text('Successfully got games')
+  }
 }
 
 const onGetGamesFailure = () => {
