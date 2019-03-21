@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic-Tac-Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+<nav>
+  <h1>Tic-Tac-Toe</h1>
+  <h3 id='user-message'></h3>
+  <div class='logged-out'>
+    <ul class="nav justify-content-end">
+
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+          Sign-In
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+          Sign-Up
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class='logged-in'>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <button id='home' type="button" class="btn btn-primary">
+          Home
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
+          Change-Password
+        </button>
+      </li>
+      <li>
+        <button id='sign-out' type="button" class="btn btn-primary">Sign Out</button>
+      </li>
+      <li>
+        <button id='get-games' type="button" class="btn btn-primary">Get Games</button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showGameModal">
+          Show Game
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+  <!-- <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form> -->
+
+  <!-- SIGN IN MODAL -->
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Sign-In</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='sign-in'>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="text" name="credentials[password]" placeholder="Password">
+            <button>Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGN UP MODAL -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Sign-Up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='sign-up'>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="text" name="credentials[password]" placeholder="Password">
+            <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHANGE PASSWORD MODAL -->
+  <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='change-password'>
+            <input type="text" name="passwords[old]" placeholder="Old Password">
+            <input type="text" name="passwords[new]" placeholder="New Password ">
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOW GAME MODAL -->
+  <div class="modal fade" id="showGameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Show Game</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='show-game'>
+            <input type="text" name="example[id]" placeholder="ID goes here">
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="content2">
+  <div class='logged-out'>
+    <div class='welcome'>
+      <h1>Welcome!</h1>
+      <p>Sign-in and play a game of tic-tac-toe</p>
+    </div>'
+  </div>
+
+  <div class="logged-in">
+  <div class="jumbotron" >
+    <h6 class='turn'></h6>
+    <div class='container'>
+      <div class='row'>
+        <div id="box-1" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+          <div id='one'></div>
+        </div>
+        <div id="box-2" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+          <div id='two'></div>
+        </div>
+        <div id="box-3" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+          <div id='three'></div>
+        </div>
+      </div>
+      <div class='row'>
+        <div id="box-4" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+          <div id='four'></div>
+        </div>
+        <div id="box-5" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+          <div id='five'></div>
+        </div>
+        <div id="box-6" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+          <div id='six'></div>
+        </div>
+      </div>
+      <div class='row'>
+        <div id="box-7" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+          <div id='seven'></div>
+        </div>
+        <div id="box-8" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+          <div id='eight'></div>
+        </div>
+        <div id="box-9" class='col-4 col-md-4 col-lg-4 box' onclick="this.diasabled = true">
+          <div id='nine'></div>
+        </div>
+      </div>
+    </div>
+    <div class='win-text'></div>
+    <div class='invalid-text'></div>
+    <form id='create-game'>
+      <button class="btn btn-primary">Start Game</button>
+    </form>
+  </div>
+
+  <div class='records'>
+    <div id='content'></div>
+  </div>
+</div>
+</div>
+
+</body>
+
+</html>
