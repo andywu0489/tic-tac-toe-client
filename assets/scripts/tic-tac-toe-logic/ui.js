@@ -3,6 +3,7 @@ const store = require('../store')
 
 const onSignUpSuccess = (responseData) => {
   $('#user-message').text('Successfully signed up!')
+  $('.modal').modal('hide')
 }
 
 const onSignUpFailure = () => {
@@ -14,6 +15,7 @@ const onSignInSuccess = (responseData) => {
   $('.logged-in').show()
   $('.logged-out').hide()
   $('#content').show()
+  $('.modal').modal('hide')
   store.user = responseData.user
 }
 
@@ -23,6 +25,7 @@ const onSignInFailure = () => {
 
 const onChangePasswordSuccess = () => {
   $('#user-message').text('Successfully changed password')
+  $('.modal').modal('hide')
   $('#content').html('<p></p>')
 }
 

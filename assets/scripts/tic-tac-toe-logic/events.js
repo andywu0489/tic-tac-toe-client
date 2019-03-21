@@ -48,9 +48,12 @@ const onSignOut = (event) => {
 }
 
 const board = store.board
+
 // Resets for new game
 const onNewGame = () => {
-  const turns = []
+  $('#content').html('')
+  let turns = []
+  turns = []
   const board = store.board
   const onBoxOneClick = (event) => {
     turns.push(1)

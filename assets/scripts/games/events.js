@@ -7,6 +7,7 @@ const store = require('../store')
 const onCreateGame = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
+  console.log(event.formData)
 
   api.createGame(formData)
     .then(ui.onCreateGameSuccess)
@@ -48,7 +49,7 @@ const onUpdateGame = (index, value) => {
 
 const addHandlers = () => {
   $('#create-game').on('submit', onCreateGame)
-  $('#get-games').on('submit', onGetGames)
+  $('#get-games').on('click', onGetGames)
   $('#show-game').on('submit', onShowGame)
 }
 

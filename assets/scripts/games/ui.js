@@ -38,7 +38,8 @@ const onGetGamesFailure = () => {
 }
 
 const onShowGameSuccess = (responseData) => {
-  $('#user-message').text('Successfully got examples')
+  $('.modal').modal('hide')
+  $('#user-message').text('Successfully got game')
 
   const gamesHTML = (`
     <h4>ID: ${responseData.game.id}</h4>

@@ -21,6 +21,6 @@ $(() => {
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
   $('#change-password').on('submit', events.onChangePassword)
-  $('#sign-out').on('submit', events.onSignOut)
+  $('#sign-out').on('click', events.onSignOut)
   $('#create-game').on('click', events.onNewGame)
 })
