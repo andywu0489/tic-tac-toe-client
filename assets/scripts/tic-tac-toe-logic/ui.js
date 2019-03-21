@@ -16,6 +16,7 @@ const onSignInSuccess = (responseData) => {
   $('.logged-out').hide()
   $('#content').show()
   $('.modal').modal('hide')
+  $('.jumbotron').show()
   store.user = responseData.user
 }
 

@@ -17,6 +17,8 @@ $(() => {
   // $('#box-7').on('click', events.onBoxSevenClick)
   // $('#box-8').on('click', events.onBoxEightClick)
   // $('#box-9').on('click', events.onBoxNineClick)
+  $('.records').hide()
+  $('#home').on('click', events.onHome)
   gamesEvents.addHandlers()
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)

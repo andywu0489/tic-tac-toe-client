@@ -39,6 +39,7 @@ const onChangePassword = (event) => {
 
 const onSignOut = (event) => {
   event.preventDefault()
+  $('.records').hide()
 
   api.signOut()
     .then(ui.onSignOutSuccess)
@@ -428,11 +429,17 @@ const onNewGame = () => {
   // }
 }
 
+const onHome = () => {
+  $('.records').hide()
+  $('.jumbotron').show()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
   board,
-  onNewGame
+  onNewGame,
+  onHome
 }

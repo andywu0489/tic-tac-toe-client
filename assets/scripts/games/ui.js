@@ -13,6 +13,8 @@ const onCreateGameFailure = () => {
 
 const onGetGamesSuccess = (responseData) => {
   // $('#user-message').text('Successfully got games')
+  $('.jumbotron').hide()
+  $('.records').show()
   $('#content').html('')
 
   responseData.games.forEach(games => {
@@ -38,6 +40,8 @@ const onGetGamesFailure = () => {
 }
 
 const onShowGameSuccess = (responseData) => {
+  $('.jumbotron').hide()
+  $('.records').show()
   $('.modal').modal('hide')
   $('#user-message').text('Successfully got game')
 
